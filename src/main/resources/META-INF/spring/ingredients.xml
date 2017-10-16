@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="lettuce" class="com.cafekotlin.ingredients.Lettuce">
+        <constructor-arg value="Romaine lettuce"/>
+        <constructor-arg value="80grs"/>
+    </bean>
+
+    <bean id="tomato" class="com.cafekotlin.ingredients.Tomato">
+        <constructor-arg value="3 slices"/>
+        <constructor-arg value="100grs"/>
+    </bean>
+
+    <bean id="meat" class="com.cafekotlin.ingredients.Meat">
+        <constructor-arg value="2 slices"/>
+        <constructor-arg value="200grs"/>
+    </bean>
+
+    <bean id="bread" class="com.cafekotlin.ingredients.Bread">
+        <constructor-arg value="Oat bread"/>
+        <constructor-arg value="200grs"/>
+    </bean>
+
+    <bean id="cheese" class="com.cafekotlin.ingredients.Cheese">
+        <constructor-arg value="3"/>
+        <constructor-arg value="American"/>
+        <constructor-arg value="40grs"/>
+    </bean>
+
+    <util:list id="ingredientList" value-type="com.cafekotlin.ingredients.Ingredient" list-class="java.util.ArrayList">
+        <ref bean="bread"/>
+        <ref bean="lettuce"/>
+        <ref bean="tomato"/>
+        <ref bean="meat"/>
+    </util:list>
+
+
+
+</beans>
